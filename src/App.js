@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import StateHook from './components/StateHook';
+
 function App() {
   return (
     <div className="App">
@@ -19,6 +21,10 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <main>
+        <StateHook />
+      </main>
     </div>
   );
 }
