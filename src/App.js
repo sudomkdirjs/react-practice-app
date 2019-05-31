@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import StateHook from './components/StateHook';
+import FlexBoxSample from './components/FlexBoxSample';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
       <main>
         <StateHook />
+        <FlexBoxSample />
       </main>
     </div>
   );
