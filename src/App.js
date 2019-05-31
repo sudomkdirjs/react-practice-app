@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import StateHook from './components/StateHook';
+import EffectHook from './components/EffectHook';
+import HooksCounter from './components/HooksCounter';
 import FlexBoxSample from './components/FlexBoxSample';
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
 
       <main>
         <StateHook />
+        <EffectHook />
+        <HooksCounter initialCount={0}/>
         <FlexBoxSample />
       </main>
     </div>
