@@ -3,8 +3,9 @@ import "./App.css";
 import useHover from "./components/hooks/useHover";
 
 export default function App() {
-  const [infoHover, infoTargetElement] = useHover();
+  
   const [titleHover, titleTargetElement] = useHover();
+  const [infoHover, infoTargetElement] = useHover();
 
   return (
     <div className="App">
