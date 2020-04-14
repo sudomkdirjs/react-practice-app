@@ -2,6 +2,7 @@ import React, { useCallback } from "react";
 import "./App.css";
 import useHover from "./components/hooks/useHover";
 import useDidUpdate from "./components/hooks/useDidUpdate";
+import useFetch from "./components/hooks/useFetch";
 
 export default function App() {
   
@@ -15,6 +16,12 @@ export default function App() {
     }, [])
   );
 
+  const [taskApiStatus, loadTask] = useFetch();
+
+  const { data } = taskApiStatus;
+
+  console.log(taskApiStatus);
+
   return (
     <div className="App">
       <h1
@@ -26,6 +33,11 @@ export default function App() {
       <h2 ref={infoTargetElement} style={{ color: infoHover ? "red" : "black" }}>
         Start editing to see some magic happen!
       </h2>
+      <button
+        onClick={() => loadTask("https://jsonplaceholder.typicode.com/todos/1")}
+      >
+        Load Data
+      </button>
     </div>
   );
 }
