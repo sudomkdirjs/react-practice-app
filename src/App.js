@@ -3,6 +3,7 @@ import "./App.css";
 import useHover from "./components/hooks/useHover";
 import useDidUpdate from "./components/hooks/useDidUpdate";
 import useFetch from "./components/hooks/useFetch";
+import usePreviousValue from "./components/hooks/usePreviousValue";
 
 export default function App() {
   
@@ -20,7 +21,9 @@ export default function App() {
 
   const { data } = taskApiStatus;
 
-  console.log(taskApiStatus);
+  const previousData = usePreviousValue(data);
+
+  console.log(previousData, data);
 
   return (
     <div className="App">
