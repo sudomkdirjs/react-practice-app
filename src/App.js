@@ -5,6 +5,7 @@ import useDidUpdate from "./components/hooks/useDidUpdate";
 import useFetch from "./components/hooks/useFetch";
 import usePreviousValue from "./components/hooks/usePreviousValue";
 import Todos from "./components/Todos";
+import GaugeMeter from './components/GaugeMeter';
 
 export default function App() {
   
@@ -42,8 +43,8 @@ export default function App() {
       >
         Load Data
       </button>
-
-      <Todos />
+      <GaugeMeter label="Wind speed" units="meters per second" />
+      {false && <Todos />}
     </div>
   );
 }
