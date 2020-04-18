@@ -6,6 +6,9 @@ import useFetch from "./components/hooks/useFetch";
 import usePreviousValue from "./components/hooks/usePreviousValue";
 import Todos from "./components/Todos";
 import GaugeMeter from './components/GaugeMeter';
+import useThemeProvider from './components/hooks/useThemeProvider';
+import ToggleButton from './components/ToggleButton';
+import colors from './css/colors';
 
 export default function App() {
   
@@ -27,8 +30,10 @@ export default function App() {
 
   console.log(previousData, data);
 
+  const { mode } = useThemeProvider();
+
   return (
-    <div className="App">
+    <div className="App" style={{backgroundColor: colors[mode].backgroundColor, color: colors[mode].contentColor}}>
       <h1
         ref={titleTargetElement}
         style={{ color: titleHover ? "green" : "black" }}
@@ -44,7 +49,8 @@ export default function App() {
         Load Data
       </button>
       <GaugeMeter label="Wind speed" units="meters per second" />
-      {false && <Todos />}
+      <ToggleButton />
+      <Todos />
     </div>
   );
 }
