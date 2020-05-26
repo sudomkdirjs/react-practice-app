@@ -9,6 +9,7 @@ import GaugeMeter from './components/GaugeMeter';
 import useThemeProvider from './components/hooks/useThemeProvider';
 import ToggleButton from './components/ToggleButton';
 import colors from './css/colors';
+import CounterApp from './components/counter';
 
 export default function App() {
   
@@ -43,6 +44,7 @@ export default function App() {
       <h2 ref={infoTargetElement} style={{ color: infoHover ? "red" : "black" }}>
         Start editing to see some magic happen!
       </h2>
+      <CounterApp />
       <button
         onClick={() => loadTask("https://jsonplaceholder.typicode.com/todos/1")}
       >
