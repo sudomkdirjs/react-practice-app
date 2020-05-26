@@ -1,14 +1,20 @@
 import React from 'react';
-import { useRecoilState } from 'recoil';
-import { counterState } from '../../recoil/counterState';
+import { useRecoilValue } from 'recoil';
+import { counterState, counterSquareSelector } from '../../recoil/counterState';
 
 const CountDisplay = () => {
 
-    const [ count ] = useRecoilState(counterState);
-    
+    const count = useRecoilValue(counterState);
+    const countSquare = useRecoilValue(counterSquareSelector);
+
     return (
         <div>
-            <bold>{count}</bold>
+            <div>
+                Count: <bold>{count}</bold>
+            </div>
+            <div>
+                Count Square: <bold>{countSquare}</bold>
+            </div>
         </div>
     );
 }

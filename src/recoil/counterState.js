@@ -1,8 +1,15 @@
-import { atom } from 'recoil';
+import { atom, selector } from 'recoil';
 
 const counterState = atom({
     key: 'counterState',
     default: 0
 });
 
-export { counterState };
+const counterSquareSelector = selector({
+    key: 'counterSquareSelector',
+    get: ({get}) => {
+        return get(counterState) ** 2;
+    }
+});
+
+export { counterState, counterSquareSelector };
