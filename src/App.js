@@ -10,6 +10,7 @@ import useThemeProvider from './components/hooks/useThemeProvider';
 import ToggleButton from './components/ToggleButton';
 import colors from './css/colors';
 import CounterApp from './components/counter';
+import TemperatureCalculator from './components/react-documentation/water-temperature/TemperatureCalculator';
 
 export default function App() {
   
@@ -50,6 +51,7 @@ export default function App() {
       >
         Load Data
       </button>
+      <TemperatureCalculator />
       <GaugeMeter label="Wind speed" units="meters per second" />
       <ToggleButton />
       <Todos />
